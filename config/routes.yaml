@@ -1,3 +1,48 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+  methods: GET
+
+article_index:
+  path: /articles
+  controller: App\Controller\ArticleController::index
+  methods: GET
+
+article_show:
+  path: /article/{id}
+  controller: App\Controller\ArticleController::show
+  methods: GET
+  requirements:
+    id: '\d+'
+
+article_create:
+  path: /article/create
+  controller: App\Controller\ArticleController::create
+  methods: GET|POST
+
+article_comment_create:
+  path: /article/{id}/comment/create
+  controller: App\Controller\ArticleCommentsController::create
+  methods: GET|POST
+  requirements:
+    id: '\d+'
+
+user_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+  methods: GET|POST
+
+user_logout:
+  path: /logout
+  controller: App\Controller\SecurityController::logout
+  methods: GET
+
+category_index:
+  path: /categories
+  controller: App\Controller\CategoryController::index
+  methods: GET
+
+category_create:
+  path: /category/create
+  controller: App\Controller\CategoryController::create
+  methods: GET|POST
