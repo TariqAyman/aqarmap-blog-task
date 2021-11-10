@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-row">
+                <div class="section-title">
+                    <h2 class="title">Create New Article</h2>
+                </div>
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="has-error">
+                        {{ form_errors(form) }}
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <span>{{ form_label(form.title) }}</span>
+                            {{ form_widget( form.title, {'attr': {'class': 'form-control', 'palceholder': 'Title'}}) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <span>{{ form_label(form.content) }}</span>
+                            {{ form_widget( form.content, {'attr': {'class': 'form-control', 'palceholder': 'Content'}}) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <span>{{ form_label(form.category) }}</span>
+                            {{ form_widget( form.category, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ form_row(form.save, {'attr': {'class': 'btn btn-primary text-uppercase'}}) }}
+                        </div>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <!-- /row -->
+{% endblock %}

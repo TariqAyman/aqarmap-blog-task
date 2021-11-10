@@ -1,0 +1,13 @@
+<!-- Post preview-->
+<div class="post-preview">
+    <a href="{{ url('article_show', {'id': article.id}) }}">
+        <h2 class="post-title">{{ article.title }}</h2>
+        <a class="post-subtitle" href="{{ url('article_index', {'category': article.category.id}) }}">
+            Category: {{ article.category.name }}
+        </a>
+    </a>
+    <p class="post-meta">
+        Posted by <a>{{ article.author.firstName }}</a>
+        on {{ article.publishedAt|date("d F Y H:i:s") }}
+    </p>
+</div>
